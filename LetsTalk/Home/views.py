@@ -14,7 +14,7 @@ def loadpage(request):
 
 def dairy(request,user_name):
 
-   return render(request,'Home/dairy.html',{})
+   return render(request,'Home/diary.html',{})
 
 
 def signup(request):

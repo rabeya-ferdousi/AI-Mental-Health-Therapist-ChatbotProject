@@ -11,6 +11,6 @@ urlpatterns = [
     path('homepage/<str:user_name>/profile/', views.profile, name='profile'),
     path('homepage/<str:user_name>/ResetPassword', views.password_reset, name='password'),
     path('loadout/', views.loadpage, name='loadout'),
-
+    path('homepage/<str:user_name>/botchat/', views.chat_with_bot_page, name='botchat'),
 
 ]

@@ -1,9 +1,9 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Client, Profile
+from .models import Client, Profile, ChatBot_Message_Thread, ChatBot_Message
 from .forms import ClientForm
-
+import re
 
 # Create your views here.
 
@@ -56,6 +56,4 @@ def login(request):
 def home_screen(request, user_name):
     return render(request, 'Home/home.html', {'user_name': user_name,})
 
-def dairy(request,user_name):
 
-   return render(request,'Home/dairy.html',{})

@@ -9,6 +9,13 @@ import re
 
 def loadpage(request):
     return render(request,'Home/loadpage.html',{})
+
+
+def dairy(request,user_name):
+
+   return render(request,'Home/dairy.html',{})
+
+
 def signup(request):
 
    if(request.method == 'POST'):

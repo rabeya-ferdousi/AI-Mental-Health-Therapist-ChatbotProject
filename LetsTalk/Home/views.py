@@ -55,3 +55,7 @@ def login(request):
 
 def home_screen(request, user_name):
     return render(request, 'Home/home.html', {'user_name': user_name,})
+
+def dairy(request,user_name):
+
+   return render(request,'Home/dairy.html',{})

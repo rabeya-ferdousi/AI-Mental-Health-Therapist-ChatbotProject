@@ -55,7 +55,7 @@ font-family: 'Berkshire Swash', cursive;
         left: 0;
         width: 100%;
         height:55px;
-        background-color: #025839;
+        background-color: #174957;
     }
 
     .positioning-container-bar {
@@ -362,7 +362,7 @@ font-family: 'Berkshire Swash', cursive;
 	<div class="container">
 		<div class="chatbox">
 			<div class="bar">
-				<div class="positioning-container-bar " style =" background : #025839">
+				<div class="positioning-container-bar " style =" background : #174957">
 					<div class="name">{{user_full_name}}</div>
 
 				<div class="name"><a target="_blank" href="http://127.0.0.1:8000/homepage/{{userid}}/{{friends_id}}/profile/{{friend_name}}" style="color : white">{{friend_name}}</a></div>
@@ -399,7 +399,7 @@ font-family: 'Berkshire Swash', cursive;
             <form method="POST">
                 {%csrf_token%}
                 {% for msg in messages %}
-                <div class="bg-success rounded py-2 px-3 mb-2">
+                <div class="bg-success rounded py-2 px-3 mb-2 " background-color="#174957">
 				<p style="color:white">{{msg}}</p>
 			    </div>
                 <br>

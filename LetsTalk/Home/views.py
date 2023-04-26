@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Client, Profile, ChatBot_Message_Thread, ChatBot_Message
+from .models import Client, Profile, ChatBot_Message_Thread, ChatBot_Message, Diary
 from .forms import ClientForm
 import openai
 import re
@@ -12,9 +12,47 @@ def loadpage(request):
     return render(request,'Home/loadpage.html',{})
 
 
-def dairy(request,user_name):
+def getPreviousNotes(request, user_id):
+    list = []
+    if Diary.objects.filter(client=user_id).exists():
+        client_notes = Diary.objects.filter(client=user_id)
+        # notes_id = notes.id
+        # notes = Diary.objects.filter(Thread_Id=thread_Id)
+        list = []
+        for notes in client_notes:
+            note = notes.note
+            title = notes.title
+            time = (notes.time).strftime("%m/%d/%Y, %H:%M:%S")
+            # sender_name = sender.f_name + " " + sender.l_name
+            title1 = str('Title ' + title )
+            list.append(title1)
+            time1 = str('Time ' + time)
+            list.append(time1)
+            note1 = str('Notes: ' + note + '\n')
+            list.append(note1)
+    return list
 
-   return render(request,'Home/diary.html',{})
+
+def dairy(request, user_name):
+    user = User.objects.get(username=user_name)
+    client = Client.objects.get(user_ID=user.id)
+    client_id = client.id
+    list = getPreviousNotes(request, user_id=client_id)
+    if (request.method == 'POST'):
+        notes = request.POST['notes']
+        title= request.POST.get('title')#['title']
+        if notes != '' and title != '':
+            # save notes with titles
+            note = Diary(client=client, title=title, note=notes)
+            note.save()
+            list = getPreviousNotes(request, user_id=client_id)
+        else:
+            messages.error(request, 'PLEASE FILL UP TITLE AND NOTES FIELD')
+    name = str(client.first_name + " " + client.last_name).upper()
+    return render(request, 'Home/diary.html', {'user_name': user_name,
+                                                 'name': name,
+                                                 'notes': list,
+                                                 })
 
 
 def signup(request):

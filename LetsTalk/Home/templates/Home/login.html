@@ -14,14 +14,19 @@
         margin: 0;
         padding: 0;
         height: 100%;
-        background: #7fcc7a !important;
+        width:100%;
+        background-image:url(https://cdn.wallpapersafari.com/5/54/5gkNDn.jpg);
+        background-size: cover;
      }
      .user_card {
-        width: 550px;
+
+        width: 500px;
         margin-top: auto;
         margin-bottom: auto;
-        background: #527850;
-        position: relative;
+        background: #ADD8E6;
+        position: absolute;
+        left: 150px;
+        bottom: 250px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -37,13 +42,13 @@
      }
 
      #form-title{
-        color: #fff;
+        color: #203354;
 
      }
 
      .login_btn {
         width: 100%;
-        background: #194226 !important;
+        background: #203354 !important;
         color: white !important;
      }
      .login_btn:focus {
@@ -54,7 +59,7 @@
         padding: 0 2rem;
      }
      .input-group-text {
-        background: #f7ba5b !important;
+        background: #203354 !important;
         color: white !important;
         border: 0 !important;
         border-radius: 0.25rem 0 0 0.25rem !important;
@@ -66,7 +71,7 @@
      }
 
      #messages{
-        background-color: grey;
+        background-color: #203354;
         color: #fff;
         padding: 10px;
         margin-top: 10px;
@@ -132,7 +137,7 @@ input {
 
            <div class="mt-4">
               <div class="d-flex justify-content-center links">
-                 Don't have an account? <a href="{% url 'signup' %}" class="ml-2"><p style="color : white ">  Sign Up </p> </a>
+                 Don't have an account? <a href="{% url 'signup' %}" class="ml-2"><p style="color : #203354 ">  Sign Up </p> </a>
               </div>
 
            </div>

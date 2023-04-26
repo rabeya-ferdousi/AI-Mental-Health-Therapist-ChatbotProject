@@ -1,6 +1,9 @@
 from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.urls import reverse
+
 from .models import Client, Profile, ChatBot_Message_Thread, ChatBot_Message, Diary
 from .forms import ClientForm
 import openai
@@ -45,7 +48,8 @@ def dairy(request, user_name):
             # save notes with titles
             note = Diary(client=client, title=title, note=notes)
             note.save()
-            list = getPreviousNotes(request, user_id=client_id)
+            #list = getPreviousNotes(request, user_id=client_id)
+            return HttpResponseRedirect(reverse('dairy',kwargs={'user_name':user_name}))
         else:
             messages.error(request, 'PLEASE FILL UP TITLE AND NOTES FIELD')
     name = str(client.first_name + " " + client.last_name).upper()

@@ -36,7 +36,7 @@ def getPreviousNotes(request, user_id):
     return list
 
 
-def dairy(request, user_name):
+def diary(request, user_name):
     user = User.objects.get(username=user_name)
     client = Client.objects.get(user_ID=user.id)
     client_id = client.id
@@ -49,7 +49,8 @@ def dairy(request, user_name):
             note = Diary(client=client, title=title, note=notes)
             note.save()
             #list = getPreviousNotes(request, user_id=client_id)
-            return HttpResponseRedirect(reverse('dairy',kwargs={'user_name':user_name}))
+            #to solve resubmission problem while refreshing page
+            return HttpResponseRedirect(reverse('diary',kwargs={'user_name':user_name}))#url name= diary and url er argument lagbe tai kwargs use kora lagse
         else:
             messages.error(request, 'PLEASE FILL UP TITLE AND NOTES FIELD')
     name = str(client.first_name + " " + client.last_name).upper()
@@ -176,6 +177,7 @@ def chat_with_bot_page(request, user_name):
                 new_msg = ChatBot_Message(Client_Message=message, Therapist_Message=response, Thread_Id=thread)
                 new_msg.save()
                 list = getMessagesRobo(request, user_id=client_id)
+                return HttpResponseRedirect(reverse('botchat',kwargs={'user_name':user_name}))#url name= diary and url er argument lagbe tai kwargs use kora lagse
 
 
             else:

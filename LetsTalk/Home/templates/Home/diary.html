@@ -140,7 +140,10 @@ font-family: 'Secular One', sans-serif;
                       <form method="POST">
                   {% for note in notes %}
                   <div class="col-sm-9">
-                    <p class=" mb-0 value">{{note}}</p>
+<!--                    <p class=" mb-0 value">{{note}}</p>-->
+                      <div class="bg-info rounded py-2 px-3 mb-2 " background-color="#174957">
+				<p style="color:black">{{note}}</p>
+			    </div>
                   </div>
                     <br>
                   {% endfor %}

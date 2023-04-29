@@ -27,12 +27,14 @@ def getPreviousNotes(request, user_id):
             title = notes.title
             time = (notes.time).strftime("%m/%d/%Y, %H:%M:%S")
             # sender_name = sender.f_name + " " + sender.l_name
-            title1 = str('Title ' + title )
-            list.append(title1)
-            time1 = str('Time ' + time)
-            list.append(time1)
+            title1 = str('Title : ' + title )
+            # list.append(title1)
+            time1 = str('Time : ' + time)
+            # list.append(time1)
             note1 = str('Notes: ' + note + '\n')
-            list.append(note1)
+            str1='\n'.join([title1,time1,note1])
+            # str1 = title1 +' \n'+ time1 + '\n' + note1
+            list.append(str1)
     return list
 
 
@@ -41,6 +43,7 @@ def diary(request, user_name):
     client = Client.objects.get(user_ID=user.id)
     client_id = client.id
     list = getPreviousNotes(request, user_id=client_id)
+    list.reverse()
     if (request.method == 'POST'):
         notes = request.POST['notes']
         title= request.POST.get('title')#['title']

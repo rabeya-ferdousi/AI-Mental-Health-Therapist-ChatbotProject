@@ -74,14 +74,14 @@ font-family: 'Berkshire Swash', cursive;
         transform: translate(0, -50%);
         width: 7.5px;
         height: 7.5px;
-        background-color: lightgreen;
+        background-color: lightblue;
         border-radius: 50%;
         animation: statuschange 20s infinite;
         transition: all 300ms ease-in-out;
     }
 
     @keyframes statuschange {
-        0% {background-color: lightgreen;}
+        0% {background-color: lightblue;}
         50% {background-color: red;}
         100% {background-color: gray;}
     }
@@ -173,7 +173,8 @@ font-family: 'Berkshire Swash', cursive;
         transform: translate(-50%, 0);
         width: 85%;
         height: 100%;
-        color : #025839;
+        color : #181867;
+<!--        this line-->
     }
 
     .actions {
@@ -268,74 +269,14 @@ font-family: 'Berkshire Swash', cursive;
         }
      }
      .value{
-        background: #025839;
+        background: #181867;
         font-weight: bold;
         }
     </style>
 </head>
 
 <body class="scroll" style="background-color:#228fad">
-<!--<section style="background-color: #eee;">-->
-<!--  <div class="container py-5">-->
 
-<!--    <div class="row d-flex justify-content-center">-->
-<!--      <div class="col-md-10 col-lg-8 col-xl-6">-->
-
-<!--        <div class="card" id="chat2">-->
-<!--          <div class="card-header d-flex justify-content-between align-items-center p-3">-->
-<!--            <h5 class="mb-0">Let'sTalk</h5>-->
-<!--            <button type="button" class="btn btn-primary btn-sm" data-mdb-ripple-color="dark">ROBO</button>-->
-<!--          </div>-->
-<!--          <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">-->
-
-<!--            <div class="d-flex flex-row justify-content-start">-->
-<!--              <img src="https://www.google.com/search?q=robot+image+icon+jpg&tbm=isch#imgrc=u1vs2gXYeRgqQM"-->
-<!--                alt="avatar 1" style="width: 45px; height: 100%;">-->
-<!--              <div>-->
-<!--                <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Hi</p>-->
-<!--              </div>-->
-<!--            </div>-->
-
-<!--            <div class="divider d-flex align-items-center mb-4">-->
-<!--              <p class="text-center mx-3 mb-0" style="color: #a2aab7;">Time</p>-->
-<!--            </div>-->
-
-<!--            <div class="d-flex flex-row justify-content-end mb-4 pt-1">-->
-<!--              <div>-->
-<!--                <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">Hiii, I'm good.</p>-->
-<!--                <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">time</p>-->
-<!--              </div>-->
-<!--              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp"-->
-<!--                alt="avatar 1" style="width: 45px; height: 100%;">-->
-<!--            </div>-->
-
-<!--            <div class="d-flex flex-row justify-content-end">-->
-<!--              <div>-->
-<!--                <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">Okay then see you on sunday!!-->
-<!--                </p>-->
-<!--                <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">00:15</p>-->
-<!--              </div>-->
-<!--              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp"-->
-<!--                alt="avatar 1" style="width: 45px; height: 100%;">-->
-<!--            </div>-->
-
-<!--          </div>-->
-<!--          <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">-->
-<!--            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"-->
-<!--              alt="avatar 3" style="width: 40px; height: 100%;">-->
-<!--            <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"-->
-<!--              placeholder="Type message">-->
-<!--            <a class="ms-1 text-muted" href="#!"><i class="fas fa-paperclip"></i></a>-->
-<!--            <a class="ms-3 text-muted" href="#!"><i class="fas fa-smile"></i></a>-->
-<!--            <a class="ms-3" href="#!"><i class="fas fa-paper-plane"></i></a>-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--      </div>-->
-<!--    </div>-->
-
-<!--  </div>-->
-<!--</section>-->
 
 	<div class="container">
 		<div class="chatbox">
@@ -372,8 +313,8 @@ font-family: 'Berkshire Swash', cursive;
             <form method="POST">
                 {%csrf_token%}
                 {% for msg in messages %}
-                <div class="bg-success rounded py-2 px-3 mb-2 " background-color="#174957">
-				<p style="color:white">{{msg}}</p>
+                <div class="bg-info rounded py-2 px-3 mb-2 " background-color="#174957">
+				<p style="color:black">{{msg}}</p>
 			    </div>
                 <br>
                 {% endfor %}
@@ -384,7 +325,7 @@ font-family: 'Berkshire Swash', cursive;
 			 <div class="flex-grow-0 py-3 px-4 border-top">
 				 <div class="input-group">
 					 <textarea type="text"  name="message" class="form-control" placeholder="Type your message"></textarea>
-					 <input class="btn btn-outline-success ms-1" type="submit" value="SEND">
+					 <input class="btn btn-outline-info ms-1" type="submit" value="SEND">
 				 </div>
 			 </div>
 			</form>

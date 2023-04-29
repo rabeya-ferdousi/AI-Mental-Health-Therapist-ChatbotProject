@@ -22,9 +22,14 @@
                 text-align:justify;
             }
     body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
+       margin: 0;
+       padding: 0;
+       height: 650px;
+       width: 100%;
+       background-image: url(https://e1.pxfuel.com/desktop-wallpaper/859/147/desktop-wallpaper-3-bot-backgrounds-chatbot.jpg);
+       background-size: cover;
+       background-position: relative;
+       position: relative;
     }
 .u{
 font-family: 'Berkshire Swash', cursive;
@@ -42,7 +47,8 @@ font-family: 'Berkshire Swash', cursive;
         margin: 0 auto;
         height : 650px;
         width: 600px;
-        background-color: #fff;
+        top:250px;
+        background-color: #B4C5E4;
         position: relative;
         border-radius: 10px;
         overflow: hidden;
@@ -55,7 +61,7 @@ font-family: 'Berkshire Swash', cursive;
         left: 0;
         width: 100%;
         height:55px;
-        background-color: #174957;
+        background-color: blue;
     }
 
     .positioning-container-bar {
@@ -275,13 +281,15 @@ font-family: 'Berkshire Swash', cursive;
     </style>
 </head>
 
-<body class="scroll" style="background-color:#228fad">
-
-
+<body class="scroll" style="background-color:#203354">
+<img src="https://thumbs.gfycat.com/UnripeAdoredGrayreefshark-size_restricted.gif">
+<img src="https://thumbs.gfycat.com/UnripeAdoredGrayreefshark-size_restricted.gif" align="right">
 	<div class="container">
+
+
 		<div class="chatbox">
 			<div class="bar">
-				<div class="positioning-container-bar " style =" background : #174957">
+				<div class="positioning-container-bar " style =" background :sky blue">
 					<div class="name">{{user_full_name}}</div>
 
 				<div class="name"><a target="_blank" href="http://127.0.0.1:8000/homepage/{{userid}}/{{friends_id}}/profile/{{friend_name}}" style="color : white">{{friend_name}}</a></div>
@@ -313,7 +321,7 @@ font-family: 'Berkshire Swash', cursive;
             <form method="POST">
                 {%csrf_token%}
                 {% for msg in messages %}
-                <div class="bg-info rounded py-2 px-3 mb-2 " background-color="#174957">
+                <div class="bg-primary rounded py-2 px-3 mb-2 " background-color="#174957">
 				<p style="color:black">{{msg}}</p>
 			    </div>
                 <br>
@@ -325,11 +333,14 @@ font-family: 'Berkshire Swash', cursive;
 			 <div class="flex-grow-0 py-3 px-4 border-top">
 				 <div class="input-group">
 					 <textarea type="text"  name="message" class="form-control" placeholder="Type your message"></textarea>
-					 <input class="btn btn-outline-info ms-1" type="submit" value="SEND">
+					 <input class="btn btn-primary btn-sm" type="submit" value="SEND">
 				 </div>
 			 </div>
 			</form>
+
 		</div>
+<img src="https://thumbs.gfycat.com/UnripeAdoredGrayreefshark-size_restricted.gif">
+		<img src="https://thumbs.gfycat.com/UnripeAdoredGrayreefshark-size_restricted.gif" align="right">
 	</div>
 
 </body>

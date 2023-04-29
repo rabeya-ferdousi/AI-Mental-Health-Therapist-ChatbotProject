@@ -47,6 +47,7 @@ def diary(request, user_name):
     if (request.method == 'POST'):
         notes = request.POST['notes']
         title= request.POST.get('title')#['title']
+
         if notes != '' and title != '':
             # save notes with titles
             note = Diary(client=client, title=title, note=notes)

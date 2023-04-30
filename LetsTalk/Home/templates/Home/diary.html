@@ -133,9 +133,9 @@ font-family: 'Secular One', sans-serif;
               <img src="https://img.freepik.com/premium-vector/avatar-profile-icon_188544-4755.jpg" alt="avatar"
                 class="rounded-circle img-fluid" style="width: 150px;">
 
-              <h5 class="my-3">{{name}}</h5>
+              <h5 class="my-3"><b>{{name}}</b></h5>
                 <form method="POST">
-                <h5 class="my-3">Title :  <input id="title" type="text" name="title"></h5>
+                <h5 class="my-3 "><b>Title : </b> <input id="title" type="text" name="title"></h5>
 <!--                <h5 class="my-3">Date : <input type="date" id="date"></h5>-->
                <form method="POST">
                 {%csrf_token%}
@@ -144,7 +144,7 @@ font-family: 'Secular One', sans-serif;
 <!--              <textarea  class="form-control rounded-0" id="exampleFormControlTextarea2" rows="1" name="about_info"></textarea>-->
               </div>
               <div class="d-flex justify-content-center mb-2">
-                <input class="btn btn-outline-primary ms-1 value" type="submit" value="SAVE">
+                <input class="btn btn-outline-info ms-1 value" type="submit" value="SAVE">
               </div>
                 <a target="_parent" href="http://127.0.0.1:8000/homepage/{{user_name}}" style="color: #228FAD" class="p">Back </a>
                </form>
@@ -171,7 +171,7 @@ font-family: 'Secular One', sans-serif;
 
                   {% for note in notes %}
 
-                  <div class="col-sm-9">
+                  <div class="col-sm-9 bg-info rounded py-2 px-3 mb-2 ">
 
                     <p class=" mb-0 value">{{note}}</p>
 

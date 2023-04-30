@@ -11,14 +11,39 @@
 body {
        margin: 0;
        padding: 0;
-       height: 650px;
+       height: 700px;
        width: 100%;
        background-image: url(https://static.vecteezy.com/system/resources/previews/011/113/809/non_2x/aesthetic-cute-pastel-blue-checkers-abstract-minimal-wallpaper-illustration-perfect-for-wallpaper-backdrop-postcard-background-and-banner-vector.jpg);
        background-size: cover;
        background-position: relative;
        position: relative;
     }
+.scroll-bg {   margin:10% auto;
 
+                width: 400px;
+
+                background:sky blue;
+                padding:10px 20px;
+
+            }
+            .scroll-div {
+
+                width: 400px;
+                height: 300px;
+                overflow: hidden;
+                overflow-y: scroll;
+
+
+            }
+            .scroll-object {
+               color:sky blue;
+                font-family:cursive;
+                font-size:15px;
+                padding:15px;
+                width:500px;
+
+
+            }
 .value{
 color : sky blue;
 font-weight: bold;
@@ -128,35 +153,52 @@ font-family: 'Secular One', sans-serif;
           </div>
 
         </div>
-        <div class="col-lg-6">
+
+        <div class="col-lg-6" style="color:#203354" >
             <div class="card mb-4">
-              <div class="card-body">
+                <div class="scroll-bg">
+                    <div class="scroll-div">
+                         <div class="scroll-object">
+              <div class="card-body" >
 
                 <div class="row">
+
                   <div class="col-sm-3">
+
                     <p class="mb-0"><b>PREVIOUS NOTES </b></p><BR>
                   </div>
-                  <div class="scroll">
                       <form method="POST">
+
                   {% for note in notes %}
+
                   <div class="col-sm-9">
+
                     <p class=" mb-0 value">{{note}}</p>
+
                   </div>
+
+
                     <br>
                   {% endfor %}
                   </form>
+</div>
                   </div>
-
+</div>
+                        </div>
             </div>
-                </div>
+                </div><img src="https://thumbs.gfycat.com/UnripeAdoredGrayreefshark-size_restricted.gif" align="right" height="20%" wdith="20%">
               </div>
             </div>
 
           </div>
       </div>
     </div>
+
         </div>
+
       </div>
+
+
     </div>
   </section>
 </body>
